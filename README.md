@@ -11,8 +11,10 @@
 
 ## Exercice 2. Préparation de l’environnement
 1. VM éteintes, utilisez les outils de configuration de VirtualBox pour mettre en place l’environnement décrit ci-dessus.
-2. Démarrez le serveur et vérifiez que les interfaces réseau sont bien présentes. A quoi correspond l’interface appelée lo ?
+2. Démarrez le serveur et vérifiez que les interfaces réseau sont bien présentes. A quoi correspond l’interface appelée lo ? `ls /sys/class/net` Permet de lister les interfaces réseaux. L'interafe `lo` est l'interface de `loopback`. 
+	* "L'adresse loopback est l'interface réseau réservée utilisée par le système local pour permettre les communications entre processus. L'hôte utilise cette adresse pour s'envoyer des paquets à lui-même."
 3. Pour désinstaller le packet il faut utiliser la commande `sudo apt remove cloud-init`.
+4. Pour changer le domaine d'une machine il faut faire `sudo hostnamectl set-hostname tpadmin.local`. Pour rendre persistant même après redémarage il faut aller modifier le fichier `/etc/hosts` retirer la ligne du nom du serveur et changer par `127.0.1.1 server server.tpadmin.local` et `127.0.1.1 client client.tpadmin.local`.
 ## Exercice 3. Installation du serveur DHCP
 
 ## Exercice 4. Donner un accès à Internet au client
