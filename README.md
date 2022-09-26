@@ -17,7 +17,17 @@
 4. Pour changer le domaine d'une machine il faut faire `sudo hostnamectl set-hostname tpadmin.local`. Pour rendre persistant même après redémarage il faut aller modifier le fichier `/etc/hosts` retirer la ligne du nom du serveur et changer par `127.0.1.1 server server.tpadmin.local` et `127.0.1.1 client client.tpadmin.local`.
 ## Exercice 3. Installation du serveur DHCP
 1. Pour installer le paquet il faut faire `sudo apt install isc-dhcp-server`.
-2. 
+2. Pour vérifier que la configuration du serveur est correcte on peut faire un coup de `ip a`.
+3. Les 2 premières ligne corresponde au temps de changement d'une adresse et le temps max avant changement.
+4. `sudo nano /etc/default/isc-dhcp-server`
+5. Pour verrifier que le service est actif il suffit de faire `sudo systemctl status isc-dhcp-server`.
+6. La machine cliente est déjà créer.
+7. Le client reçoit bien une adresse IP de la plage spécifiée précédemment
+	* DHCPDISCOVER : Il s'agit de l'adresse MAC et l'interface qui demande une adresse
+	* DHCPOFFER : L'adresse donné a l'adresse MAC
+	* DHCPREQUEST : Vérifie que l'adresse a bien été attribué
+	* DHCPACK : Vérifie que l'adresse a bien été attribué
+8. 
 ## Exercice 4. Donner un accès à Internet au client
 
 ## Exercice 5. Installation du serveur DNS
