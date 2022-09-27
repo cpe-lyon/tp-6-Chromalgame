@@ -36,4 +36,12 @@
 2. Autoriser la traduction d’adresse source : `sudo iptables --table nat --append POSTROUTING --out-interface ens192 -j MASQUERADE`.
 ## Exercice 5. Installation du serveur DNS
 1. Iinstaller `bind9` `sudo apt install bind9`. Verrifier que le service est bien actif `sudo systemctl status bind9`.
+2. Modifier le fichier `/etc/bind/named.conf.options`. Redémarrer le service `sudo systemctl restart bind9`.
+3. Tout fonctionne comme il faut.
+4. X
 ## Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
+1. Modifier le fichier `/etc/bind/named.conf.local`
+2. X
+3. X
+4. X
+5. X
