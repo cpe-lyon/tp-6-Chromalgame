@@ -33,7 +33,7 @@
 10. La config se fait dans le fichier `/etc/dhcp/dhcpd.conf` la nouvelle configuration a bien été pris en compte.
 ## Exercice 4. Donner un accès à Internet au client
 1. Autoriser l’IP forwarding sur le serveur `sudo nano /etc/sysctl.conf` décommenter la ligne `net.ipv4.ip_forward=1`, appliquer les changements `sudo sysctl -p /etc/sysctl.conf`. La commande `sudo sysctl net.ipv4.ip_forward` renvoi bien 1
-2. 
+2. Autoriser la traduction d’adresse source : `sudo iptables --table nat --append POSTROUTING --out-interface ens192 -j MASQUERADE`.
 ## Exercice 5. Installation du serveur DNS
-
+1. Iinstaller `bind9` `sudo apt install bind9`. Verrifier que le service est bien actif `sudo systemctl status bind9`.
 ## Exercice 6. Configuration du serveur DNS pour la zone tpadmin.local
